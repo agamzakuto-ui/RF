@@ -18,6 +18,11 @@ const Transmitter: React.FC = () => {
         <p className="introduction-subtitle">Coexistence Spectrum</p>
         <FileUpload />
     </div>
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> fb4db67f74ccfd2bf932b09f3e2ce556afab7ab3
     </div>
   );
 };
