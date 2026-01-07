@@ -1,5 +1,6 @@
 import "./App.css";
-import { BrowserRouter, Routes, Route, Navigate, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Introduction from "./pages/Introduction";
 import Receiver from "./pages/Receiver";
 import Transmitter from "./pages/Transmitter";
 import Spectograma from "./components/spectograma/spectograma";
@@ -12,12 +13,10 @@ const App = () => {
 
         <main>
           <Routes>
-            <Route path="/" element={<Navigate to="/receiver" replace />} />
+            <Route path="/" element={<Introduction />} />
             <Route path="/receiver" element={<Receiver />} />
             <Route path="/transmitter" element={<Transmitter />} />
-                  
             <Route path="/Spectograma" element={<Spectograma />} />
-
           </Routes>
         </main>
       </div>
