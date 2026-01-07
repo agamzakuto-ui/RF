@@ -1,6 +1,7 @@
 import React from "react";
 import { FileUpload } from "../components/FileUpload";
 import SweepingHeatmap from "../components/SweepingHeatmap";
+import ImageReceiver from "../components/ImageReciver";
 
 const Receiver: React.FC = () => {
   return (
@@ -42,8 +43,10 @@ const Receiver: React.FC = () => {
               }}
           >
               <div className="imgRecvBox"
-                   style={{backgroundColor: "red", width: "550px", height: "300px", marginLeft:"20px"}}>
+                   style={{backgroundColor: "#08857f", width: "550px", height: "300px", marginLeft:"20px"}}>
+              <ImageReceiver/>
               </div>
+
               <div className="timeRecvBox"
                    style={{backgroundColor: "green", width: "550px", height: "160px", marginLeft:"20px", marginTop: "40px"}}>
               </div>

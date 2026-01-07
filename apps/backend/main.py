@@ -1,5 +1,6 @@
+import base64
 import logging
-from fastapi import FastAPI, File, UploadFile, HTTPException
+from fastapi import FastAPI, File, UploadFile, HTTPException, WebSocket, WebSocketDisconnect
 from fastapi.middleware.cors import CORSMiddleware
 from app.file_handler import convert_file_to_numpy, FileConversionError
 
@@ -9,7 +10,7 @@ logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
 )
 logger = logging.getLogger(__name__)
-
+connections = []
 app = FastAPI(title="Cognitive Radio service", version="1.0.0")
 
 # Configure CORS for local development
@@ -84,6 +85,48 @@ async def get_data_to_send(file: UploadFile = File(...)):
         logger.error(f"Server error during conversion of {file.filename}: {str(e)}", exc_info=True)
         raise HTTPException(status_code=500, detail=f"Server error: {str(e)}")
 
+
+
+@app.websocket("/ws")
+async def websocket_endpoint(ws: WebSocket):
+    await ws.accept()
+    connections.append(ws)
+    try:
+        while True:
+            await ws.receive_text()
+    except WebSocketDisconnect:
+        connections.remove(ws)
+
+@app.post("/trigger-image")
+async def trigger_image(valid: bool = True):
+    
+    with open("image.jpg", "rb") as f:
+        img_bytes = f.read()
+    img_base64 = base64.b64encode(img_bytes).decode("utf-8")
+
+    payload = {
+        "type": "image",
+        "is_valid_data": valid,
+        "image_base64": img_base64,
+        "message": "Image transmitted successfully"
+    }
+
+    for ws in connections:
+        await ws.send_json(payload)
+
+    return {"status": "sent trigger image"}
+
+@app.post("/trigger-signal-frame")
+async def trigger_signal_frame():
+    for ws in connections:
+        await ws.send_json({
+            "type": "number_frame",
+            "is_valid_data": True,
+            "payload": {
+                "values": [1, 2, 3, 4, 5]
+            }
+        })
+    return {"status": "sent signal frame"}
 
 if __name__ == "__main__":
     import uvicorn
