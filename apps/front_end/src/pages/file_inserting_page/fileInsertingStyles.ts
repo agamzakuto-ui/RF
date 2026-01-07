@@ -30,24 +30,23 @@ const useStyles = makeStyles()(() => ({
     display: "flex",
     alignItems: "center",      // vertically center items
     justifyContent: "space-between", // distribute space
-    border: "solid 3px rgb(2,2,2)",
+    border: "solid 3.5px rgba(91, 91, 91, 1)",
     cursor: "pointer",
     padding: "10px",
     width: "250px",             // make it wider so text + circle fits
     borderRadius: "70px",
-    gap: "10px"                 // optional: spacing between items
 },
     cognitiveModeText: {
         padding: "10px",
     },
     redCircle: {
-        width: "20px",
-        height: "20px",
+        width: "80px",
+        height: "60px",
         backgroundColor: "red",
         borderRadius: "50%",
         display: "inline-block", // make sure it takes space
-        marginLeft: "10px" // optional, to separate from text
-}
+    },
+
     
 }));
 

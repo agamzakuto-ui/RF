@@ -20,7 +20,7 @@ const FileInserting: React.FC = () => {
                 <div className={classes.miniContainer}>
                     <Typography variant="h6">COGNITIVE MODE</Typography>
                     <div className={classes.choosingCognitiveMode} onClick={handleClick}>
-                        <img src="../src/assets/brain_image.png" width="40px" height="40px"/>           
+                        <img className={classes.brainImg} src="../src/assets/brain_image.png" width="40px" height="40px"/>           
                         <Typography className={classes.cognitiveModeText}>COGNITIVE MODE: {isOn ? "ON" : "OFF"}</Typography>
                         <div className={classes.redCircle}></div>
                     </div>
