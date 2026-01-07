@@ -1,7 +1,7 @@
 import { makeStyles } from "tss-react/mui";
 
 const useStyles = makeStyles()(() => ({
-    wholeRectangle: {
+    wholePage: {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
@@ -10,7 +10,15 @@ const useStyles = makeStyles()(() => ({
         background: "radial-gradient(ellipse at center, #1e3a5f 0%, #0f1f3d 50%, #0a1628 100%)",
         padding: "20px",
         color: "white",
-        flexDirection: "column"
+    },
+    wholeRectangle: {
+        display: "flex",
+        flexDirection: "column",
+        border: "solid 3px rgba(103, 103, 103, 1)",
+        padding: "10px",
+        borderRadius: "15px",
+        width: "700px",
+        height: "400px"
     },
     titlesContainer: {
         display: "flex",
@@ -24,10 +32,12 @@ const useStyles = makeStyles()(() => ({
     miniContainer: {
         display: "flex",
         flexDirection: "column",
-        padding: "20px"
+        padding: "20px",
+        textAlign: "center",
+        width: "50%"
     },
     choosingCognitiveMode: {
-    display: "flex",
+    display: "flex",    
     alignItems: "center",      // vertically center items
     justifyContent: "space-between", // distribute space
     border: "solid 3.5px rgba(91, 91, 91, 1)",
@@ -38,14 +48,21 @@ const useStyles = makeStyles()(() => ({
 },
     cognitiveModeText: {
         padding: "10px",
+        textAlign: "center"
     },
     redCircle: {
         width: "80px",
         height: "60px",
-        backgroundColor: "red",
         borderRadius: "50%",
         display: "inline-block", // make sure it takes space
     },
+    brainImg: {
+       width: "40px",
+       height: "40px"
+    },
+    fileMiniContainer: {
+
+    }
 
     
 }));
