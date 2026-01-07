@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import * as lcjs from '@lightningchart/lcjs'
 import { lightningChart } from '@lightningchart/lcjs'
+import { getFrame } from '../services/getFrame'
 
 const {
     PalettedFill,
@@ -33,8 +34,8 @@ const SweepingHeatmap: React.FC<SweepingHeatmapProps> = ({width, height}) => {
 
     const dataSampleSize = 1000
 
-    // New data every 0.5s
-    const frameIntervalMs = 500
+    // New data every s
+    const frameIntervalMs = 1000
     const frameIntervalSec = frameIntervalMs / 1000 // 0.5
     const secondsVisible = 10                      // last 10 seconds
 
@@ -55,7 +56,7 @@ const SweepingHeatmap: React.FC<SweepingHeatmapProps> = ({width, height}) => {
             .getDefaultAxisY()
             .setTitle('Frequency')
             .setUnits('Hz')
-            .setInterval({ start: 0, end: dataSampleSize })
+            .setInterval({ start: 2.4, end: 2.48 })  
 
         // X axis = time in seconds
         const axisX = chart
@@ -118,10 +119,13 @@ const SweepingHeatmap: React.FC<SweepingHeatmapProps> = ({width, height}) => {
             }
             return frame
         }
+        
 
-        const intervalId = window.setInterval(() => {
+        const intervalId = window.setInterval(async () => {
             // New data every 0.5s
-            const sample: number[] = getRandomSample(frameIndex)
+            // const sample: number[] = getRandomSample(frameIndex)
+            const sample: number[] = await getFrame()
+            console.log('Sample', [sample] as number[][])
 
             // Circular column index (0..sweepingHistory-1)
             const col: number = frameIndex % sweepingHistory
