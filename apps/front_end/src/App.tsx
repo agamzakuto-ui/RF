@@ -1,6 +1,6 @@
 
 import './App.css'
-import FileUploadButton from './components/inputFile'
+import { FileUpload } from "./components/FileUpload";
 import SweepingHeatmap from './components/SweepingHeatmap'
 
 const App = () => {
@@ -9,7 +9,7 @@ const App = () => {
       <header className="App-header">
         <h1>LightningChart JS Sweeping Heatmap Demo</h1>
         <p>Real-time spectrogram with {1000 * 250} data points visible</p>
-        <FileUploadButton/>
+        <FileUpload />
       </header>
       
       <main>
@@ -18,7 +18,7 @@ const App = () => {
         </div>
       </main>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
