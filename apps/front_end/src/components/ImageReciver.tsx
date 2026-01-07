@@ -80,7 +80,9 @@ export default function ImageReceiver() {
 
   return (
     <div style={styles.container}>
-      <h2 style={styles.title}>Image Receiver</h2>
+      {!image &&
+      <div>
+       <h2 style={styles.title}>Image Receiver</h2>
 
       <div
         style={{
@@ -90,7 +92,7 @@ export default function ImageReceiver() {
         }}
       >
         {status}
-      </div>
+      </div></div>}
 
       {image && <img src={image} alt="Received" style={styles.image} />}
     </div>
