@@ -4,6 +4,7 @@ import Introduction from "./pages/Introduction";
 import Receiver from "./pages/Receiver";
 import Transmitter from "./pages/Transmitter";
 import Spectograma from "./components/spectograma/spectograma";
+import FileInserting from "./pages/file_inserting_page/fileInserting";
 
 const App = () => {
   return (
@@ -14,7 +15,7 @@ const App = () => {
         <main>
           <Routes>
             <Route path="/" element={<Introduction />} />
-            <Route path="/receiver" element={<Receiver />} />
+            <Route path="/receiver" element={<FileInserting />} />
             <Route path="/transmitter" element={<Transmitter />} />
             <Route path="/Spectograma" element={<Spectograma />} />
           </Routes>
