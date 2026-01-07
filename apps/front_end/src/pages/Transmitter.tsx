@@ -4,18 +4,22 @@ import SweepingHeatmap from "../components/SweepingHeatmap";
 
 const Transmitter: React.FC = () => {
   return (
-    <div>
-      <header className="App-header">
-        <h2>Transmitter</h2>
-        <p>Real-time spectrogram with {1000 * 250} data points visible</p>
-        <FileUpload />
-      </header>
+    <div><div
 
-      <main>
-        <div className="chart-container">
-          <SweepingHeatmap width={1000} height={600} />
-        </div>
-      </main>
+        style={{
+            width:"100%",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            flexDirection: "column"
+        }}
+    >
+        <h2  className="introduction-title">CoSpec</h2>
+        <p className="introduction-subtitle">Coexistence Spectrum</p>
+        <FileUpload />
+    </div>
+
+
     </div>
   );
 };
