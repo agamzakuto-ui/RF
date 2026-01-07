@@ -173,7 +173,7 @@ const SweepingHeatmap: React.FC<SweepingHeatmapProps> = ({width, height}) => {
     }, [])
 
     return (
-        <div style={{ position: 'relative', width, height}}>
+        <div style={{ position: 'relative', width, height, paddingLeft: "30px"}}>
             <div ref={chartRef} style={{ width: '100%', height: '100%' }} />
             <div
                 style={{
