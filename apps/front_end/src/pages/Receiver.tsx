@@ -1,6 +1,7 @@
 import React from "react";
 import { FileUpload } from "../components/FileUpload";
 import SweepingHeatmap from "../components/SweepingHeatmap";
+import ImageReceiver from "../components/ImageReciver";
 
 const Receiver: React.FC = () => {
   return (
