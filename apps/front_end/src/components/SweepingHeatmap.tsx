@@ -27,7 +27,7 @@ interface SweepingHeatmapProps {
     height?: number
 }
 
-const SweepingHeatmap: React.FC<SweepingHeatmapProps> = () => {
+const SweepingHeatmap: React.FC<SweepingHeatmapProps> = ({width, height}) => {
     const chartRef = useRef<HTMLDivElement>(null)
     const [pps, setPps] = useState(0)
 
@@ -173,7 +173,7 @@ const SweepingHeatmap: React.FC<SweepingHeatmapProps> = () => {
     }, [])
 
     return (
-        <div style={{ position: 'relative', width: '100%', height: '100%' }}>
+        <div style={{ position: 'relative', width, height}}>
             <div ref={chartRef} style={{ width: '100%', height: '100%' }} />
             <div
                 style={{
