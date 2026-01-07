@@ -20,7 +20,6 @@ const Receiver: React.FC = () => {
               <p className="introduction-subtitle">Coexistence Spectrum</p>
           </div>
 
-          <FileUpload />
       </header>
 
       <main>
