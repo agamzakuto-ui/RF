@@ -16,15 +16,10 @@ const Transmitter: React.FC = () => {
     >
         <h2  className="introduction-title">CoSpec</h2>
         <p className="introduction-subtitle">Coexistence Spectrum</p>
+        <FileUpload />
     </div>
 
-        <FileUpload />
 
-      <main>
-        <div className="chart-container">
-          <SweepingHeatmap width={1000} height={600} />
-        </div>
-      </main>
     </div>
   );
 };
