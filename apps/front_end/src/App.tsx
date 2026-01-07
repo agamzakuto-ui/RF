@@ -15,8 +15,9 @@ const App = () => {
         <main>
           <Routes>
             <Route path="/" element={<Introduction />} />
-            <Route path="/receiver" element={<FileInserting />} />
-            <Route path="/transmitter" element={<Transmitter />} />
+            <Route path="*" element={<Introduction />} />
+            <Route path="/receiver" element={<Receiver />} />
+            <Route path="/transmitter" element={<FileInserting />} />
             <Route path="/Spectograma" element={<Spectograma />} />
           </Routes>
         </main>
