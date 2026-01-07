@@ -19,8 +19,6 @@ const Receiver: React.FC = () => {
               <h2  className="introduction-title">CoSpec</h2>
               <p className="introduction-subtitle">Coexistence Spectrum</p>
           </div>
-
-          <FileUpload />
       </header>
 
       <main>
