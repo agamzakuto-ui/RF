@@ -1,6 +1,7 @@
 import { Button, Typography } from "@mui/material";
 import useStyles from "./fileInsertingStyles";
 import { useState } from "react";
+import { FileUpload } from "../../components/FileUpload";
 
 const FileInserting: React.FC = () => {
     const [isOn, setIsOn] = useState(false);
@@ -29,8 +30,8 @@ const FileInserting: React.FC = () => {
                         <Typography variant="h6">COGNITIVE MODE: {isOn ? "Automatically adapts to interference" : "Manual frequency selections only. Autonomous hopping disabled"}</Typography>
                     </div>
                     <div className={cx(classes.miniContainer, classes.fileMiniContainer)}>
-                        <Typography variant="h3">sec</Typography>
-                        <Typography variant="h3">side</Typography>
+                        <Typography variant="h3">file inserting</Typography>
+                        <FileUpload/>
                     </div>
                 </div>
             </div>
