@@ -2,6 +2,7 @@ import React from "react";
 import { FileUpload } from "../components/FileUpload";
 import SweepingHeatmap from "../components/SweepingHeatmap";
 import ImageReceiver from "../components/ImageReciver";
+import TextReceiver from "../components/TextReceiver";
 
 const Receiver: React.FC = () => {
   return (
@@ -48,7 +49,9 @@ const Receiver: React.FC = () => {
               </div>
 
               <div className="timeRecvBox"
-                   style={{backgroundColor: "green", width: "550px", height: "160px", marginLeft:"20px", marginTop: "40px"}}>
+                   style={{backgroundColor: "green", width: "550px", height: "160px", marginLeft:"20px", marginTop: "40px"
+              ,borderRadius: "20px"}}>
+                  <TextReceiver />
               </div>
           </div>
 
