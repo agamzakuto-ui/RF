@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "../styles/FileUpload.css";
+import {useNavigate} from "react-router-dom";
 
 interface FileUploadResponse {
   success: boolean;
@@ -7,6 +8,7 @@ interface FileUploadResponse {
 }
 
 export function FileUpload() {
+  const navigate = useNavigate()
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState<{
@@ -53,6 +55,7 @@ export function FileUpload() {
         text: data.message,
       });
       setSelectedFile(null);
+      navigate("/receiver")
     } catch (error) {
       setMessage({
         type: "error",
