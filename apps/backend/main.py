@@ -43,17 +43,21 @@ def health_check():
 
 
 @app.post("/api/getDataToSend")
-async def get_data_to_send(file: UploadFile = File(...)):
+async def get_data_to_send(file: UploadFile = File(...), cognitiveMode: bool = False):
     """
     Convert uploaded image or text file to numpy array format.
-    
+
     Supported formats:
     - Images: JPG, JPEG, PNG, BMP
     - Text: TXT, CSV
-    
+
+    Args:
+        file: The uploaded file
+        cognitiveMode: Boolean indicating if cognitive mode is enabled
+
     Returns success message with details logged on server.
     """
-    logger.info(f"Received file upload request: {file.filename}")
+    logger.info(f"Received file upload request: {file.filename}, cognitiveMode: {cognitiveMode}")
     try:
         # Read file content
         logger.info(f"Reading file content for: {file.filename}")
