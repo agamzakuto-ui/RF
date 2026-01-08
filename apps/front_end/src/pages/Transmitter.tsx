@@ -18,8 +18,6 @@ const Transmitter: React.FC = () => {
         <p className="introduction-subtitle">Coexistence Spectrum</p>
         <FileUpload />
     </div>
-
-
     </div>
   );
 };
