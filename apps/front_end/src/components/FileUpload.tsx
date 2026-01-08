@@ -97,7 +97,7 @@ export function FileUpload() {
           disabled={!selectedFile || loading}
           className="upload-btn"
         >
-          {loading ? "Converting..." : "Upload & Convert"}
+          {loading ? "Converting..." : "Transmit"}
         </button>
       </div>
 
